@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Meow+Script&family=Oswald:wght@200..700&display=swap');
 
+/* ===================================
+   Reset
+=================================== */
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body{
+
+/* ===================================
+   General Styles
+=================================== */
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,57 +22,187 @@ body{
     font-style: italic;
 }
 
-h1, h2, h3{
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #252525;
+h1,
+h2,
+h3 {
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
 }
 
-
-
-header{ background-color: #ffffff;
+/* ===================================
+   Header
+=================================== */
+header {
+    background-color: #ffffff;
     padding: 0 1rem;
     position: fixed;
-    z-index:99;
+    z-index: 99;
     width: 100%;
     box-shadow: 0 2px 2px #3a3a3a;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
 
+header a {
+    text-decoration: none;
+    color: inherit;
+}
 
+#logo {
+    line-height: 50px;
+}
 
+/* ===================================
+   Navigation
+=================================== */
+#menu {
+    font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+}
 
-main{
+#menu > li {
+    margin-bottom: 1em;
+}
+
+#menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.active {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+nav {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    padding: 0 1rem;
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: none;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+#nav-toggle:checked ~ nav {
+    display: block;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ===================================
+   Main Content
+=================================== */
+main {
     flex: 1 0 auto;
     margin-top: 47px;
-} 
+}
 
+/* ===================================
+   Hero Section
+=================================== */
 #hero {
     height: 600px;
     width: 100%;
-    background: url("../image/hero-image.webp") no-repeat center center/cover;
-   
+    background: url("../images/hero-image.webp") no-repeat center center / cover;
+    position: relative;
 }
 
-#cover-text{
-    background-color: rgba(241, 109, 107, .7);
+#cover-text {
+    background-color: rgba(241, 109, 107, 0.7);
     font-size: 130%;
     position: absolute;
-    bottom:30px;
+    bottom: 30px;
     width: 80%;
     min-height: 200px;
     padding-top: 40px;
     padding-left: 10px;
 }
 
-#cover-text > h2, #cover-text > h3{
-    color: #ffffff
+#cover-text > h2,
+#cover-text > h3 {
+    color: #ffffff;
 }
 
-#social-networks{
+/* ===================================
+   Reasons Section
+=================================== */
+#reasons {
+    width: 90%;
+    margin: 20px auto;
+}
+
+#reasons > h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 280%;
+}
+
+#benefits {
+    line-height: 20px;
+}
+
+#benefits-physical,
+#benefits-mental {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#benefits-physical > div,
+#benefits-mental > div {
+    width: 75%;
+    margin-bottom: 20px;
+}
+
+#benefits-mental > div {
+    text-align: end;
+    align-self: flex-end;
+}
+
+#benefits p {
+    line-height: 20px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+#benefits hr {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
+}
+
+#benefits-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#circle-cover-bg {
+    background: url("../images/reasons-image.webp") no-repeat center center / cover;
+    height: 90vw;
+    width: 90vw;
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto 20px;
+}
+
+/* ===================================
+   Footer
+=================================== */
+#social-networks {
     text-align: center;
     padding: 20px 0;
     display: flex;
@@ -79,161 +216,59 @@ main{
     color: #3a3a3a;
 }
 
+/* ===================================
+   Media Query - Tablets (768px+)
+=================================== */
+@media screen and (min-width: 768px) {
 
-header a {
-    text-decoration: none;
-}
-
-#menu{
-    text-decoration:none;
-    letter-spacing: 4px;
-    font-size: 110%;
-    list-style: none;
-}
-
-#menu > li {
-    margin-bottom: 1em;
-}
-
-.active{
-    border-bottom: 1px solid #3a3a3a;
-}
-
-nav {
-    position: absolute;
-    background-color: #ffffff;
-    width: 100%;
-    padding: 0 1rem;
-    box-shadow: 0 2px 2px #3a3a3a;
-    left: 0;
-    display: none;
-    top: 100%
-}
-
-#nav-toggle:checked~nav{
-    display: block;
-}
-
-#nav-toggle {
-    display: none;
-}
-
-
-
-.nav-toggle-label {
-    font-size: 2rem;
-}
-
-@media screen and (min-width: 768px){
     nav {
         display: block;
         position: relative;
-        box-shadow: none;
         width: fit-content;
         padding-right: 1rem;
+        box-shadow: none;
     }
 
+    #menu {
+        display: flex;
+    }
 
-#menu{
-    display:flex;
+    #menu > li {
+        padding-left: 1rem;
+        margin-bottom: 0;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    #logo {
+        font-size: 280%;
+        line-height: 75px;
+        margin: 0 0.5rem;
+    }
+
+    #cover-text {
+        width: 300px;
+        right: 50px;
+    }
 }
 
-#menu > li {
-    padding-left: 1rem;
-}
+/* ===================================
+   Media Query - Desktop (992px+)
+=================================== */
+@media screen and (min-width: 992px) {
 
-.nav-toggle-label {
-    display: none;
-}
-
-#logo{
-    font-size: 280%;
-    line-height: 75px;
-    margin: 0 0.5rem;
-}
-
-#cover-text{
-    width: 300px;
-    right: 50px;
-}
-}
-
-@media screen and (min-width: 992px){
-
-   #menu a:hover{
+    #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
 }
 
-#reasons{
-    width: 90%;
-    margin: 20px auto;
-   
-    
-}
-
-#reasons > h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 280%;
-   
-}
-
-#benefits{
-    line-height: 20px;
-}
-
-#benefits-physical, #benefits-mental {
-    margin-bottom: 20px;
-    line-height: 20px;
-}
-
-#benefits p {
-    line-height: 20px;
-    margin-bottom: 20px;
-}
-
-#benefits hr{
-     border-top: 1px solid #3a3a3a;
-     margin: 5px; 0;
-}
-
-#circle-cover-bg{
-    background: url('../image/reasons-image.webp') no-repeat center center/cover;
-    height: 90vw;
-    width: 90vw;
-    border-radius: 50%;
-    max-width: 300px;
-    max-height: 300px;
-    margin: 0 auto 20px;
-
-}
-
-#benefits-image{
-    display: flex;
-    align-items: center;
-    justify-conent: center;
-}
-
-/* Reasons section */
-#benefits-physical,
-#benefits-mental{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-#benefits-physical > div,
-#benefits-mental > div {
-    width: 75%;
-}
-
-#benefits-mental> div {
-    text-align: end;
-    align-self: flex-end;
-}
-
+/* ===================================
+   Media Query - Large Screens (1200px+)
+=================================== */
 @media screen and (min-width: 1200px) {
+
     #benefits {
         display: flex;
         flex-direction: row;
@@ -243,11 +278,11 @@ nav {
         flex: 1;
     }
 
-    #benefits-image{
+    #benefits-image {
         order: 0;
     }
 
-    #benefits-mental{
+    #benefits-mental {
         order: 1;
     }
 
@@ -258,4 +293,17 @@ nav {
     #benefits-physical > div {
         align-self: flex-end;
     }
+}
+
+
+
+#meetups{
+    
+    background: url("../images/dublin-city.webp") no-repeat center center / cover;
+    height: 90vw;
+    width: 90vw;
+    
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto 20px;
 }
